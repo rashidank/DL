@@ -44,5 +44,5 @@ print("Accuracy: %.2f%%" % (scores[1] * 100))
 
 # Save the model using pickle
 import pickle
-with open("imdb_DNN.pkl", 'wb') as file:
-    pickle.dump(model, file)
+
+model.save("DNN.keras")

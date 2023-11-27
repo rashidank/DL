@@ -28,4 +28,4 @@ model.fit(X_train, y_train, epochs=3, batch_size=64)
 scores = model.evaluate(X_test, y_test, verbose=0)
 print("Accuracy: %.2f%%" % (scores[1]*100))
 
-model.save("LSTM\lstm_model.h5")
+model.save("LSTM.keras")

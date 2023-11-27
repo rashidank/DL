@@ -52,11 +52,9 @@ if task == "Sentiment Classification":
             with open('imdb_back_prop.pkl', 'rb') as file:
                 model = pickle.load(file)
         elif model_option == "DNN":
-            with open('imdb_DNN.pkl', 'rb') as file:
-                model = pickle.load(file)
+            model = load_model('DNN.keras')
         elif model_option == "RNN":
-            with open('imdb_RNN.pkl', 'rb') as file:
-                model = pickle.load(file)
+            model = load_model('CNN_model.h5')
         elif model_option == "LSTM":
             model = load_model(r'LSTM\lstm_model.h5')
 
@@ -71,7 +69,7 @@ elif task == "Tumor Detection":
 
     if uploaded_file is not None:
         # Load the tumor detection model
-        model = load_model(r'CNN\tumor_detection\CNN_model.h5')
+        model = load_model('CNN_model.h5')
         st.image(uploaded_file, caption="Uploaded Image.", use_column_width=False, width=200)
         st.write("")
 

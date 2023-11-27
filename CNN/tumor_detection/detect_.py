@@ -59,7 +59,7 @@ model = tf.keras.Sequential([
   tf.keras.layers.MaxPooling2D(2,2),
   tf.keras.layers.Flatten(),
   tf.keras.layers.Dense(256, activation='relu'),
-  tf.keras.layers.Dense(2),
+  tf.keras.layers.Dense(2)
 ])
 
 #model compailing  anf fitting
@@ -72,4 +72,4 @@ early_stop = tf.keras.callbacks.EarlyStopping(monitor='accuracy', mode='min', pa
 
 history = model.fit(train_ds,validation_data=val_ds,epochs=20,callbacks=[early_stop])
 
-model.save(r"C:\Users\fayis\Documents\DL\diff_models\CNN\tumor_detection\CNN_model.h5")
+model.save("CNN.keras")
