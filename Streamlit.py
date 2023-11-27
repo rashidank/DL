@@ -54,9 +54,10 @@ if task == "Sentiment Classification":
         elif model_option == "DNN":
             model = load_model('DNN.keras')
         elif model_option == "RNN":
-            model = load_model('CNN_model.h5')
+            model = load_model('RNN.keras')
         elif model_option == "LSTM":
-            model = load_model(r'LSTM\lstm_model.h5')
+            model = load_model('LSTM.keras')
+
 
         if st.button("Classify Sentiment"):
             result = sentiment_classification(new_review_text, model)
@@ -69,7 +70,7 @@ elif task == "Tumor Detection":
 
     if uploaded_file is not None:
         # Load the tumor detection model
-        model = load_model('CNN_model.h5')
+        model = load_model('CNN.keras')
         st.image(uploaded_file, caption="Uploaded Image.", use_column_width=False, width=200)
         st.write("")
 
