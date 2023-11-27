@@ -49,13 +49,13 @@ if task == "Sentiment Classification":
             with open('model_1_perceptron.pkl', 'rb') as file:
                 model = pickle.load(file)
         elif model_option == "Backpropagation":
-            with open(r'BackPropogation\imdb_back_prop.pkl', 'rb') as file:
+            with open('imdb_back_prop.pkl', 'rb') as file:
                 model = pickle.load(file)
         elif model_option == "DNN":
-            with open(r'BackPropogation\imdb_DNN.pkl', 'rb') as file:
+            with open('imdb_DNN.pkl', 'rb') as file:
                 model = pickle.load(file)
         elif model_option == "RNN":
-            with open(r'BackPropogation\imdb_RNN.pkl', 'rb') as file:
+            with open('imdb_RNN.pkl', 'rb') as file:
                 model = pickle.load(file)
         elif model_option == "LSTM":
             model = load_model(r'LSTM\lstm_model.h5')
