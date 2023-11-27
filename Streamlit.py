@@ -5,6 +5,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.datasets import imdb
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import pickle
+import tensorflow as tf
 
 # Load word index for Sentiment Classification
 word_to_index = imdb.get_word_index()
@@ -52,11 +53,11 @@ if task == "Sentiment Classification":
             with open('imdb_back_prop.pkl', 'rb') as file:
                 model = pickle.load(file)
         elif model_option == "DNN":
-            model = load_model('DNN.keras')
+            model = tf.keras.models.load_model("DNN.keras")
         elif model_option == "RNN":
-            model = load_model('RNN.keras')
+            model = tf.keras.models.load_model("RNN.keras")
         elif model_option == "LSTM":
-            model = load_model('LSTM.keras')
+            model = tf.keras.models.load_model("LSTM.keras")
 
 
         if st.button("Classify Sentiment"):
@@ -70,7 +71,7 @@ elif task == "Tumor Detection":
 
     if uploaded_file is not None:
         # Load the tumor detection model
-        model = load_model('CNN.keras')
+        model = tf.keras.models.load_model("CNN.keras")
         st.image(uploaded_file, caption="Uploaded Image.", use_column_width=False, width=200)
         st.write("")
 
